@@ -1,0 +1,19 @@
+<h1>여기는 <%= @review.id %>번 리뷰를 보는 곳 입니다.</h1>
+리뷰번호:  <%= @review.id %>
+
+<p>
+  제목: <%= @review.title %> | 평점: <%= @review.ratio %></br>
+  내용: <%= @review.content %>
+</p>
+
+
+<hr />
+ <form action='/comments' method='POST'>
+   <input type='hidden' name='authenticity_token' value=<%= @token %>></input>
+   <input type='hidden' name='review_id' value=<%= @review.id %>></input>
+   <strong>댓글: </strong>
+
+   <input type='text' name='input_content'></input>
+   <input type='submit'></input>
+ </form>
+ 

@@ -1,0 +1,6 @@
+<%= form_for @review do |f| %>
+ 제목 <%= f.text_field :title %><br/>
+ 평점 <%= f.number_field :ratio, in: 1.0..10.0 %><br/>
+ 내용 <%= f.text_area :content, size: "60x12" %><br/>
+  <%= f.submit "제출" %>
+<% end %>
